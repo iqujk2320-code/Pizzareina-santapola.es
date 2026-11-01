@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://__DOMINIO__/sitemap.xml
+Sitemap: https://pizzareina-santapola.es/sitemap.xml

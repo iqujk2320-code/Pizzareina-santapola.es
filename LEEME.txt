@@ -1,26 +1,22 @@
-PIZZAREINA — файлы сайта
-========================
+PIZZAREINA — pizzareina-santapola.es
+====================================
 
-Структура:
+Estructura / Структура:
   index.html        — испанская версия (главная)
   en/index.html     — английская
   fr/index.html     — французская
   img/              — пицца, фото заведения, пиццы, карта, текстура бумаги
-  fonts/            — шрифты (лежат на самом сайте, без Google Fonts)
+  fonts/            — шрифты (на самом сайте, без Google Fonts)
   js/               — библиотека анимаций GSAP
   favicon.*, icon-*, apple-touch-icon.png — иконки
   og-image.jpg      — картинка превью для WhatsApp / Messenger
   sitemap.xml, robots.txt — для Google
   _headers          — настройки кэша для Netlify
 
-ПЕРЕД ПУБЛИКАЦИЕЙ:
-1) Во всех файлах заменить __DOMINIO__ на свой домен (например pizzareina.es):
-   index.html, en/index.html, fr/index.html, sitemap.xml, robots.txt
-2) В юридических текстах (Aviso legal / Privacidad) заменить
-   [NOMBRE O RAZÓN SOCIAL], [NIF], [EMAIL] на данные владельца.
-   Они находятся в каждом index.html (поиск по "[NIF]").
+Домен, реквизиты владельца и Umami уже прописаны — ничего менять не нужно.
 
 ВЫГРУЗКА:
 - Netlify: app.netlify.com/drop — перетащить ВСЮ папку (не отдельные файлы).
 - GitHub: загрузить содержимое папки в корень репозитория,
   затем подключить репозиторий в Netlify.
+- Потом в Netlify: Domain management → добавить pizzareina-santapola.es.

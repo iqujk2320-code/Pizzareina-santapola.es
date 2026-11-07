@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr" data-lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preload" as="image" href="../img/pizza-flyer.webp" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" href="../fonts/playfair-display-latin-900-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="../fonts/fira-sans-condensed-latin-700-normal.woff2" crossorigin>
+<link rel="preconnect" href="https://cloud.umami.is">
+<link rel="preconnect" href="https://gateway.umami.is">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="b1f8a828-aff7-473a-a827-08e7cc998048"></script>
+<script>
+/* Umami events: tag the buttons we want to count (calls, menu, directions, language) */
+document.addEventListener('DOMContentLoaded',function(){
+  function tag(sel,ev,where){document.querySelectorAll(sel).forEach(function(el){el.setAttribute('data-umami-event',ev);if(where)el.setAttribute('data-umami-event-lugar',where)})}
+  tag('.hcta a[href^="tel:"]','llamar','inicio');
+  tag('.mbar a[href^="tel:"]','llamar','barra-inferior');
+  tag('#phone','llamar','numero-contacto');
+  tag('.info .btns a[href^="tel:"]','llamar','boton-contacto');
+  tag('#heroMenu','ver-carta','inicio');
+  tag('.mbar a[href="#carta"]','ver-carta','barra-inferior');
+  tag('.mbar .to-map','como-llegar','barra-inferior');
+  tag('.maps-link','abrir-google-maps');
+  document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('data-umami-event','idioma');b.setAttribute('data-umami-event-a',b.dataset.lang)});
+});
+</script>
 <meta property="og:type" content="restaurant">
 <meta property="og:site_name" content="Pizzareina">
 <meta property="og:title" content="Pizzareina — Pizzas artisanales à emporter à Santa Pola">
@@ -20,7 +41,7 @@
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="../favicon-48.png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Pizzareina","alternateName":"Pizzareina - Pizzas Caseras","description":"Pizzas artesanales para llevar en Santa Pola. 40 pizzas a elegir. Oferta 3x2 recogiendo en el local.","servesCuisine":["Pizza","Italiana"],"priceRange":"€","telephone":"+34965415714","address":{"@type":"PostalAddress","streetAddress":"Plaza Doctor Fleming, 5 bajo","addressLocality":"Santa Pola","addressRegion":"Alicante","addressCountry":"ES"},"geo":{"@type":"GeoCoordinates","latitude":38.1925939,"longitude":-0.5616776},"hasMap":"https://maps.app.goo.gl/d8t61mGTt3PxXe6u8","acceptsReservations":false,"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"19:00","closes":"23:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"19:00","closes":"23:59"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"13:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"19:00","closes":"23:59"}],"availableLanguage":["es","en","fr"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Pizzareina","url":"https://pizzareina-santapola.es/","image":"https://pizzareina-santapola.es/og-image.jpg","menu":"https://pizzareina-santapola.es/#carta","alternateName":"Pizzareina - Pizzas Caseras","description":"Pizzas artesanales para llevar en Santa Pola. 40 pizzas a elegir. Oferta 3x2 recogiendo en el local.","servesCuisine":["Pizza","Italiana"],"priceRange":"€","telephone":"+34965415714","email":"abdelghanilyazghi092@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Plaza Doctor Fleming, 5 bajo","addressLocality":"Santa Pola","addressRegion":"Alicante","addressCountry":"ES"},"geo":{"@type":"GeoCoordinates","latitude":38.1925939,"longitude":-0.5616776},"hasMap":"https://maps.app.goo.gl/d8t61mGTt3PxXe6u8","acceptsReservations":false,"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"19:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"13:00","closes":"15:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"19:00","closes":"23:59"}],"availableLanguage":["es","en","fr"]}</script>
 <link rel="stylesheet" href="../fonts/fonts.css">
 <script>document.documentElement.classList.add('js-intro');setTimeout(function(){document.documentElement.classList.remove('js-intro')},3500);</script>
 <style>
@@ -517,7 +538,7 @@ a[href^="tel:"] svg{transform-origin:50% 60%;animation:ring 3.2s ease-in-out inf
     <div class="wrap">
       <div class="sec-head z"><h2 data-i="findTitle"></h2></div>
       <div class="find">
-        <a class="map maps-link" href="#" target="_blank" rel="noopener" aria-label="Pizzareina — Google Maps">
+        <a class="map maps-link" href="#" target="_blank" rel="noopener">
           <img class="mapimg" src="../img/mapa.webp" alt="Mapa: Pizzareina, Pza. Dr. Fleming 5, Santa Pola" width="800" height="600" loading="lazy" decoding="async">
           <span class="mpin" aria-hidden="true"><svg viewBox="0 0 48 60"><ellipse cx="24" cy="57" rx="9" ry="3" fill="rgba(0,0,0,.22)"/><path d="M24 2C12.4 2 4 10.6 4 21.6 4 36 24 56 24 56s20-20 20-34.4C44 10.6 35.6 2 24 2z" fill="#A3161A" stroke="#FCFCFA" stroke-width="2.5"/><circle cx="24" cy="21.5" r="7.5" fill="#FCFCFA"/></svg><b>Pizzareina</b></span>
           <span class="osm">© OpenStreetMap</span>
@@ -571,18 +592,18 @@ $$('.maps-link').forEach(function(a){a.href=MAPS});
 
 /* ---------- I18N ---------- */
 var T={
- es:{seeMenu:'Ver la carta',heroDeliv:'También a domicilio · mín. 2 pizzas (+1,50 €)',toCats:'↑ Categorías',allerg:'¿Alergias o intolerancias? Pregúntanos por los alérgenos de cada pizza en el local o por teléfono: 965 41 57 14.',legalNotice:'Aviso legal',privacy:'Privacidad',build:'Desliza para montar la pizza',lbDough:'Masa artesanal',lbSauce:'Tomate',lbCheese:'Queso',lbPep:'Pepperoni',lbBasil:'Albahaca',skip:'Saltar intro',replay:'↻ Repetir animación',tagline:'Pizzas artesanales · Para llevar',oferta:'Oferta',badgeCap:'Válida recoger<br>en local',forty:'40 pizzas a elegir',heroNote:'3x2 solo para recoger en el local',scroll:'Desliza',only:'Solo para<br>recoger en el local',offerSub:'Llévate 3 pizzas y paga 2',menuTitle:'Nuestras pizzas',menuSub:'Pizzas artesanales para llevar',moreTitle:'Y además',moreSub:'Ensaladas, pastas, complementos y bebidas',galTitle:'Nuestro local',galSub:'Pza. Dr. Fleming, 5 · Santa Pola',hoursTitle:'Horario',openNow:'Abierto ahora',closedNow:'Cerrado ahora',closesAt:'cierra a las',opensAt:'abre a las',tomorrow:'mañana',days:['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],monThu:'Lunes – Jueves',findTitle:'Dónde estamos',mapLbl:'Ver en Google Maps ↗',delivery:'<b>Servicio a domicilio</b> · mínimo 2 pizzas · +1,50 €',callNote:'Llama y pasa a recoger: la oferta 3x2 es solo para recoger en el local.',openMaps:'Abrir en Google Maps',call:'Pedir',barMenu:'Carta',barMap:'Cómo llegar',photo:'Foto',pzTitle:'Nuestras pizzas',pzPh:'Foto de pizza',ph:['La terraza','El mostrador','Nuestro rótulo','La fachada','En la calle'],and:' y ',
+ es:{seeMenu:'Ver la carta',heroDeliv:'También a domicilio · mín. 2 pizzas (+1,50 €)',toCats:'↑ Categorías',allerg:'¿Alergias o intolerancias? Pregúntanos por los alérgenos de cada pizza en el local o por teléfono: 965 41 57 14.',legalNotice:'Aviso legal',privacy:'Privacidad',build:'Desliza para montar la pizza',lbDough:'Masa artesanal',lbSauce:'Tomate',lbCheese:'Queso',lbPep:'Pepperoni',lbBasil:'Albahaca',skip:'Saltar intro',replay:'↻ Repetir animación',tagline:'Pizzas artesanales · Para llevar',oferta:'Oferta',badgeCap:'Válida recoger<br>en local',forty:'40 pizzas a elegir',heroNote:'3x2 solo para recoger en el local',scroll:'Desliza',only:'Solo para<br>recoger en el local',offerSub:'Llévate 3 pizzas y paga 2',menuTitle:'Nuestras pizzas',menuSub:'Pizzas artesanales para llevar',moreTitle:'Y además',moreSub:'Ensaladas, pastas, complementos, bebidas e ingredientes extra',galTitle:'Nuestro local',galSub:'Pza. Dr. Fleming, 5 · Santa Pola',hoursTitle:'Horario',openNow:'Abierto ahora',closedNow:'Cerrado ahora',closesAt:'cierra a las',opensAt:'abre a las',tomorrow:'mañana',days:['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],monThu:'Lunes – Jueves',findTitle:'Dónde estamos',mapLbl:'Ver en Google Maps ↗',delivery:'<b>Servicio a domicilio</b> · mínimo 2 pizzas · +1,50 €',callNote:'Llama y pasa a recoger: la oferta 3x2 es solo para recoger en el local.',openMaps:'Abrir en Google Maps',call:'Pedir',barMenu:'Carta',barMap:'Cómo llegar',photo:'Foto',pzTitle:'Nuestras pizzas',pzPh:'Foto de pizza',ph:['La terraza','El mostrador','Nuestro rótulo','La fachada','En la calle'],and:' y ',
    cats:{clasicas:'Las clásicas',diferentes:'Las diferentes',integrales:'Las integrales',suaves:'Las suaves',especiales:'Las especiales',ensaladas:'Ensaladas',pastas:'Pastas',bebidas:'Bebidas',extras:'Ingredientes extra',complementos:'Complementos'}},
- en:{seeMenu:'See the menu',heroDeliv:'Home delivery too · min. 2 pizzas (+€1.50)',toCats:'↑ Categories',allerg:'Allergies or intolerances? Ask us about the allergens in each pizza in the shop or by phone: 965 41 57 14.',legalNotice:'Legal notice',privacy:'Privacy',build:'Scroll to build the pizza',lbDough:'Handmade dough',lbSauce:'Tomato',lbCheese:'Cheese',lbPep:'Pepperoni',lbBasil:'Basil',skip:'Skip intro',replay:'↻ Replay animation',tagline:'Handmade pizzas · Takeaway',oferta:'Offer',badgeCap:'Valid for<br>pick-up',forty:'40 pizzas to choose from',heroNote:'3 for 2 on pick-up orders only',scroll:'Scroll',only:'Pick-up orders<br>only',offerSub:'Take 3 pizzas, pay for 2',menuTitle:'Our pizzas',menuSub:'Handmade pizzas to take away',moreTitle:'And also',moreSub:'Salads, pasta, sides and drinks',galTitle:'Our place',galSub:'Pza. Dr. Fleming, 5 · Santa Pola',hoursTitle:'Opening hours',openNow:'Open now',closedNow:'Closed now',closesAt:'closes at',opensAt:'opens at',tomorrow:'tomorrow',days:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],monThu:'Monday – Thursday',findTitle:'Find us',mapLbl:'View on Google Maps ↗',delivery:'<b>Home delivery</b> · minimum 2 pizzas · +€1.50',callNote:'Call ahead and pick up: the 3 for 2 deal is for pick-up only.',openMaps:'Open in Google Maps',call:'Order',barMenu:'Menu',barMap:'Directions',photo:'Photo',pzTitle:'Our pizzas',pzPh:'Pizza photo',ph:['The terrace','The counter','Our sign','Shop front','On the street'],and:' and ',
+ en:{seeMenu:'See the menu',heroDeliv:'Home delivery too · min. 2 pizzas (+€1.50)',toCats:'↑ Categories',allerg:'Allergies or intolerances? Ask us about the allergens in each pizza in the shop or by phone: 965 41 57 14.',legalNotice:'Legal notice',privacy:'Privacy',build:'Scroll to build the pizza',lbDough:'Handmade dough',lbSauce:'Tomato',lbCheese:'Cheese',lbPep:'Pepperoni',lbBasil:'Basil',skip:'Skip intro',replay:'↻ Replay animation',tagline:'Handmade pizzas · Takeaway',oferta:'Offer',badgeCap:'Valid for<br>pick-up',forty:'40 pizzas to choose from',heroNote:'3 for 2 on pick-up orders only',scroll:'Scroll',only:'Pick-up orders<br>only',offerSub:'Take 3 pizzas, pay for 2',menuTitle:'Our pizzas',menuSub:'Handmade pizzas to take away',moreTitle:'And also',moreSub:'Salads, pasta, sides, drinks and extra toppings',galTitle:'Our place',galSub:'Pza. Dr. Fleming, 5 · Santa Pola',hoursTitle:'Opening hours',openNow:'Open now',closedNow:'Closed now',closesAt:'closes at',opensAt:'opens at',tomorrow:'tomorrow',days:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],monThu:'Monday – Thursday',findTitle:'Find us',mapLbl:'View on Google Maps ↗',delivery:'<b>Home delivery</b> · minimum 2 pizzas · +€1.50',callNote:'Call ahead and pick up: the 3 for 2 deal is for pick-up only.',openMaps:'Open in Google Maps',call:'Order',barMenu:'Menu',barMap:'Directions',photo:'Photo',pzTitle:'Our pizzas',pzPh:'Pizza photo',ph:['The terrace','The counter','Our sign','Shop front','On the street'],and:' and ',
    cats:{clasicas:'The classics',diferentes:'Something different',integrales:'Wholemeal',suaves:'White base',especiales:'Specials',ensaladas:'Salads',pastas:'Pasta',bebidas:'Drinks',extras:'Extra toppings',complementos:'Sides'}},
- fr:{seeMenu:'Voir la carte',heroDeliv:'Livraison aussi · min. 2 pizzas (+1,50 €)',toCats:'↑ Catégories',allerg:'Allergies ou intolérances ? Demandez-nous les allergènes de chaque pizza sur place ou par téléphone : 965 41 57 14.',legalNotice:'Mentions légales',privacy:'Confidentialité',build:'Faites défiler pour monter la pizza',lbDough:'Pâte artisanale',lbSauce:'Tomate',lbCheese:'Fromage',lbPep:'Pepperoni',lbBasil:'Basilic',skip:'Passer l’intro',replay:'↻ Rejouer l’animation',tagline:'Pizzas artisanales · À emporter',oferta:'Offre',badgeCap:'Valable<br>à emporter',forty:'40 pizzas au choix',heroNote:'3 pour 2 uniquement à emporter',scroll:'Défiler',only:'Uniquement<br>à emporter',offerSub:'3 pizzas pour le prix de 2',menuTitle:'Nos pizzas',menuSub:'Pizzas artisanales à emporter',moreTitle:'Et aussi',moreSub:'Salades, pâtes, accompagnements et boissons',galTitle:'Notre pizzeria',galSub:'Pza. Dr. Fleming, 5 · Santa Pola',hoursTitle:'Horaires',openNow:'Ouvert',closedNow:'Fermé',closesAt:'ferme à',opensAt:'ouvre à',tomorrow:'demain',days:['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],monThu:'Lundi – Jeudi',findTitle:'Nous trouver',mapLbl:'Voir sur Google Maps ↗',delivery:'<b>Livraison à domicile</b> · minimum 2 pizzas · +1,50 €',callNote:'Appelez puis passez récupérer : l’offre 3 pour 2 est valable uniquement à emporter.',openMaps:'Ouvrir dans Google Maps',call:'Commander',barMenu:'Carte',barMap:'Itinéraire',photo:'Photo',pzTitle:'Nos pizzas',pzPh:'Photo de pizza',ph:['La terrasse','Le comptoir','Notre enseigne','La façade','Dans la rue'],and:' et ',
+ fr:{seeMenu:'Voir la carte',heroDeliv:'Livraison aussi · min. 2 pizzas (+1,50 €)',toCats:'↑ Catégories',allerg:'Allergies ou intolérances ? Demandez-nous les allergènes de chaque pizza sur place ou par téléphone : 965 41 57 14.',legalNotice:'Mentions légales',privacy:'Confidentialité',build:'Faites défiler pour monter la pizza',lbDough:'Pâte artisanale',lbSauce:'Tomate',lbCheese:'Fromage',lbPep:'Pepperoni',lbBasil:'Basilic',skip:'Passer l’intro',replay:'↻ Rejouer l’animation',tagline:'Pizzas artisanales · À emporter',oferta:'Offre',badgeCap:'Valable<br>à emporter',forty:'40 pizzas au choix',heroNote:'3 pour 2 uniquement à emporter',scroll:'Défiler',only:'Uniquement<br>à emporter',offerSub:'3 pizzas pour le prix de 2',menuTitle:'Nos pizzas',menuSub:'Pizzas artisanales à emporter',moreTitle:'Et aussi',moreSub:'Salades, pâtes, accompagnements, boissons et suppléments',galTitle:'Notre pizzeria',galSub:'Pza. Dr. Fleming, 5 · Santa Pola',hoursTitle:'Horaires',openNow:'Ouvert',closedNow:'Fermé',closesAt:'ferme à',opensAt:'ouvre à',tomorrow:'demain',days:['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],monThu:'Lundi – Jeudi',findTitle:'Nous trouver',mapLbl:'Voir sur Google Maps ↗',delivery:'<b>Livraison à domicile</b> · minimum 2 pizzas · +1,50 €',callNote:'Appelez puis passez récupérer : l’offre 3 pour 2 est valable uniquement à emporter.',openMaps:'Ouvrir dans Google Maps',call:'Commander',barMenu:'Carte',barMap:'Itinéraire',photo:'Photo',pzTitle:'Nos pizzas',pzPh:'Photo de pizza',ph:['La terrasse','Le comptoir','Notre enseigne','La façade','Dans la rue'],and:' et ',
    cats:{clasicas:'Les classiques',diferentes:'Les originales',integrales:'Pâte complète',suaves:'Base crème',especiales:'Les spéciales',ensaladas:'Salades',pastas:'Pâtes',bebidas:'Boissons',extras:'Suppléments',complementos:'Accompagnements'}}
 };
 // ingredients: [es, en, fr]
 var I={tom:['tomate','tomato','tomate'],tnat:['tomate natural','fresh tomato','tomate fraîche'],jam:['jamón','ham','jambon'],cha:['champiñones','mushrooms','champignons'],hue:['huevo','egg','œuf'],que:['queso','cheese','fromage'],ore:['orégano','oregano','origan'],bac:['bacon','bacon','bacon'],sbl:['salsa blanca','white sauce','sauce blanche'],ceb:['cebolla','onion','oignon'],atu:['atún','tuna','thon'],ace:['aceitunas','olives','olives'],anc:['anchoas','anchovies','anchois'],jb:['jamón o bacon','ham or bacon','jambon ou bacon'],aa:['atún o anchoas','tuna or anchovies','thon ou anchois'],gam:['gambas','prawns','crevettes'],car:['carne','meat','viande'],bbq:['salsa barbacoa','barbecue sauce','sauce barbecue'],pep:['pepperoni','pepperoni','pepperoni'],cur:['curry','curry','curry'],cq:['cuatro quesos','four cheeses','quatre fromages'],pla:['plátano','banana','banane'],roq:['roquefort','Roquefort','roquefort'],gui:['guindillas','chilli peppers','piments'],pol:['pollo','chicken','poulet'],mai:['maíz','sweetcorn','maïs'],pue:['puerros','leeks','poireaux'],nue:['nueces','walnuts','noix'],pas:['pasas','raisins','raisins secs'],mint:['masa integral','wholemeal dough','pâte complète'],veg:['vegetales','vegetables','légumes'],dat:['dátiles','dates','dattes'],sal:['salmón','salmon','saumon'],gor:['gorgonzola','gorgonzola','gorgonzola'],cab:['queso de cabra','goat cheese','fromage de chèvre'],esp:['especias','spices','épices'],espi:['espinacas','spinach','épinards'],aov:['aceite de oliva','olive oil','huile d’olive'],salc:['salchicha','sausage','saucisse'],acei:['aceite','oil','huile'],ahu:['ahumados','smoked fish','poissons fumés'],salah:['salmón ahumado','smoked salmon','saumon fumé'],sala:['salami','salami','salami'],pims:['pimientos','peppers','poivrons'],cho:['chorizo','chorizo','chorizo'],pim:['pimiento','pepper','poivron'],pin:['piña','pineapple','ananas'],cpi:['carne picada','minced meat','viande hachée'],chi:['chili','chilli','piment'],cal:['calamares','squid','calamars'],ajo:['ajo','garlic','ail'],per:['perejil','parsley','persil'],alc:['alcachofas','artichokes','artichauts'],esr:['espárragos','asparagus','asperges'],jser:['jamón serrano','Serrano ham','jambon serrano'],qman:['queso manchego','Manchego cheese','fromage manchego'],ruc:['rúcula','rocket','roquette'],keb:['pollo o carne de kebab','chicken or kebab meat','poulet ou viande kebab'],sajo:['salsa blanca con ajo','garlic white sauce','sauce blanche à l’ail'],pasta:['pasta','pasta','pâtes'],sros:['salsa rosa','pink sauce','sauce cocktail'],lec:['lechuga','lettuce','laitue']};
 // item: [name (string or [es,en,fr]), price, ingredient keys, optional tag [es,en,fr]]
 var M={
- clasicas:[['Reina',8.5,'tom jam cha hue que ore'],['Margarita',6,'tom que ore'],['Rapid',7.5,'tom bac que ore'],['Presto',7.5,'tom jam que ore'],['Carbonara',8,'sbl bac ceb que ore'],['Pescadora',8,'tom atu ceb que ace ore'],['Mixta',8.5,'tom jam atu que ace ore'],['Siciliana',8.5,'tom tnat anc que ceb ace ore'],['Calzone',7.5,'tom jam hue que ore',['pizza cerrada','folded pizza','pizza fermée']],['Caprichosa',8.5,'tom jb aa ceb cha gam ace que ore'],['Barbacoa',7.5,'car bbq que ore'],['Pepperoni',8,'tom pep que ore']],
+ clasicas:[['Reina',8.5,'tom jam cha hue que ore'],['Margarita',6,'tom que ore'],['Rapid',7.5,'tom bac que ore'],['Presto',7.5,'tom jam que ore'],['Carbonara',8,'sbl bac ceb que ore'],['Pescadora',8,'tom atu ceb que ace ore'],['Mixta',8.5,'tom jam atu que ace ore'],['Siciliana',8.5,'tom tnat anc que ceb ace ore'],['Calzone',8,'tom jam hue que ore',['pizza cerrada','folded pizza','pizza fermée']],['Caprichosa',8.5,'tom jb aa ceb cha gam ace que ore'],['Barbacoa',7.5,'car bbq que ore'],['Pepperoni',8,'tom pep que ore']],
  especiales:[['Frankfurt',7.5,'aov salc que ore'],['Ahumada',8.8,'acei tnat ceb ahu ace salah que ore'],['Rififí',8,'tom sala pims que ace ore'],['Levantina',8,'tom cho pim ace que ore'],['Bahía',8,'tom jam pin que ore'],['Tío Mac',8,'tom cpi ceb que ace ore'],['Especial Tío Mac',8.5,'tom cpi ceb hue ace que ore'],['Carnívora',8.5,'tom cpi jam bac cho que ore'],['Mexicana',8.5,'tom cpi mai ceb chi pim que ore'],['Popeye',8.5,'tom bac espi que ore'],['Olivia',8.5,'sbl espi gam que ore'],['Vegetal',8.5,'tom cha alc esr que ore'],['Romana',8.5,'tom jam sala cha que gui ore'],['Santa Pola',8.5,'tom gam cal ajo per que ace ore'],['Serrana',8.5,'aov tnat jser qman que ore'],['Focacha',8.5,'ruc cab tom'],['Kebab',8.5,'keb sajo que ore'],['Blanca',8.5,'cq']],
  suaves:[['Báltica',8,'sbl sal que ore'],['Riquísima',8.5,'sbl bac gor que ace ore'],['Cerdeña',8.5,'sbl bac ceb cab que ace esp'],['Noruega',8.5,'sbl sal espi roq que ore']],
  diferentes:[['Criolla',8.5,'sbl pla roq gui que ore'],['Light',8.5,'sbl pol mai pue que ore'],['Dulce',8.5,'sbl cha nue pas que ore'],['India',8.5,'sbl pol pin ceb cur que ore'],[['Pan de ajo','Garlic bread','Pain à l’ail'],5.8,'']],
@@ -590,7 +611,8 @@ var M={
  ensaladas:[[['De pasta','Pasta salad','Salade de pâtes'],6,'pasta jam que tom mai sros ace'],[['La clásica','Classic salad','Salade classique'],6,'lec tom ceb atu ace acei mai']],
  pastas:[[['Spaghetti al roquefort','Spaghetti with Roquefort','Spaghetti au roquefort'],8,''],[['Spaghetti a la carbonara','Spaghetti carbonara','Spaghetti carbonara'],8,''],[['Spaghetti a la carbonara con roquefort','Spaghetti carbonara with Roquefort','Spaghetti carbonara au roquefort'],9,''],[['Spaghetti boloñesa','Spaghetti bolognese','Spaghetti bolognaise'],8,'']],
  complementos:[[['Patatas asadas al horno con queso','Oven-roasted potatoes with cheese','Pommes de terre rôties au four et fromage'],3.5,''],[['Alitas asadas al horno con salsa','Oven-roasted chicken wings with sauce','Ailes de poulet rôties au four, sauce'],4.5,'']],
- bebidas:[[['Coca-Cola, Fanta, cerveza 33 cl','Coca-Cola, Fanta, beer 33 cl','Coca-Cola, Fanta, bière 33 cl'],1.75,''],[['Agua 33 cl','Water 33 cl','Eau 33 cl'],1.25,''],[['Agua 1,5 L','Water 1.5 L','Eau 1,5 L'],1.75,''],['Tinto de verano',1.75,'']]
+ bebidas:[[['Coca-Cola, Fanta, cerveza 33 cl','Coca-Cola, Fanta, beer 33 cl','Coca-Cola, Fanta, bière 33 cl'],1.75,''],[['Agua 33 cl','Water 33 cl','Eau 33 cl'],1.25,''],[['Agua 1,5 L','Water 1.5 L','Eau 1,5 L'],1.75,''],['Tinto de verano',1.75,'']],
+ extras:[[['Carnes y charcutería','Meat & cold cuts','Viandes et charcuterie'],1.5,''],[['Vegetales, huevo y otros','Vegetables, egg & more','Légumes, œuf et autres'],.5,''],[['Queso extra','Extra cheese','Supplément fromage'],.5,'']]
 };
 var LI={es:0,en:1,fr:2},lang='es';
 function price(p){return lang==='en'?'€'+p.toFixed(2):p.toFixed(2).replace('.',',')+' €'}
@@ -607,7 +629,7 @@ function card(k){return '<article class="card" id="cat-'+k+'"><h3>'+T[lang].cats
   return '<li><div class="row"><span class="n">'+nm(it[0])+(it[3]?' <span class="tag">'+it[3][LI[lang]]+'</span>':'')+'</span><span class="dots"></span><span class="p">'+price(it[1])+'</span></div>'+(d?'<p>'+d+'</p>':'')+'</li>';}).join('')+'</ul></article>';}
 var PHOTOS=["../img/local/terraza.webp", "../img/local/mostrador.webp", "../img/local/rotulo.webp", "../img/local/fachada.webp", "../img/local/calle.webp"];
 // opening hours (Europe/Madrid), minutes from midnight; 1440 = 00:00 next day
-var HOURS={0:[[780,930],[1140,1440]],1:[[1140,1410]],2:[[1140,1410]],3:[[1140,1410]],4:[[1140,1410]],5:[[1140,1440]],6:[[780,930],[1140,1440]]};
+var HOURS={0:[[780,930],[1140,1440]],1:[[1140,1380]],2:[[1140,1380]],3:[[1140,1380]],4:[[1140,1380]],5:[[1140,1380]],6:[[780,930],[1140,1440]]};
 function hm(m){m=m%1440;return ('0'+Math.floor(m/60)).slice(-2)+':'+('0'+m%60).slice(-2)}
 function madridNow(){
   try{var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Madrid',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date()),o={};
@@ -625,7 +647,7 @@ function renderHours(){
   else{var next=today.filter(function(r){return r[0]>now.m})[0];
     status='<span class="st off">'+t.closedNow+'</span> · '+t.opensAt+' '+(next?hm(next[0]):hm(HOURS[(now.d+1)%7][0][0])+' ('+t.tomorrow+')');}
   function span(d){return HOURS[d].map(function(r){return hm(r[0])+'–'+hm(r[1])}).join(' · ')}
-  var rows=[[t.monThu,[1,2,3,4]],[t.days[5],[5]],[t.days[6]+' – '+t.days[0],[6,0]]];
+  var rows=[[t.days[1]+' – '+t.days[5],[1,2,3,4,5]],[t.days[6]+' – '+t.days[0],[6,0]]];
   $('#hours').innerHTML='<h3>'+t.hoursTitle+'</h3><p class="status">'+status+'</p><dl>'+rows.map(function(r){
     return '<div'+(r[1].indexOf(now.d)>-1?' class="today"':'')+'><dt>'+r[0]+'</dt><dd>'+span(r[1][0])+'</dd></div>'}).join('')+'</dl>';
 }
@@ -633,22 +655,22 @@ var PZIMG={"margarita": "../img/pizzas/margarita.webp", "reina": "../img/pizzas/
 var PHSZ=[[900, 1200], [1400, 788], [1400, 788], [1400, 788], [1400, 788]];
 var PZ=[['margarita','Margarita'],['reina','Reina'],['pepperoni','Pepperoni'],['barbacoa','Barbacoa'],['presto','Presto']];
 var LEGAL={
- aviso:['Aviso legal','<p><b>Titular:</b> [NOMBRE O RAZÓN SOCIAL] · <b>NIF:</b> [NIF]<br><b>Domicilio:</b> Pza. Dr. Fleming, 5 bajo, 03130 Santa Pola (Alicante)<br><b>Teléfono:</b> 965 41 57 14 · <b>Email:</b> [EMAIL]</p><p>Este sitio web tiene carácter informativo sobre la carta, precios, horarios y ofertas de Pizzareina. Los precios y ofertas pueden cambiar sin previo aviso; prevalecen los vigentes en el local.</p><p>Los textos, imágenes y diseño de este sitio pertenecen a su titular. Mapa: © colaboradores de OpenStreetMap.</p>'],
- priv:['Política de privacidad','<p><b>Responsable:</b> [NOMBRE O RAZÓN SOCIAL] · NIF [NIF] · [EMAIL]</p><p>Este sitio web no utiliza cookies ni formularios y no recoge datos personales. El mapa es una imagen estática: solo si pulsas en él se abre Google Maps, que tiene su propia política de privacidad.</p><p>Si nos llamas para hacer un pedido, usamos tu nombre, teléfono y dirección solo para preparar y entregar ese pedido. Puedes ejercer tus derechos de acceso, rectificación y supresión escribiendo a [EMAIL]. También puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>']
+ aviso:['Aviso legal','<p><b>Titular:</b> Abdelghani Lyazghi Bouslikhane (nombre comercial: Pizzeria Reina / Pizzareina) · <b>NIF:</b> 61040651P<br><b>Domicilio:</b> Pza. Doctor Fleming, 5, bajo F, 03130 Santa Pola (Alicante)<br><b>Teléfono:</b> 965 41 57 14 · <b>Email:</b> abdelghanilyazghi092@gmail.com</p><p>Este sitio web tiene carácter informativo sobre la carta, precios, horarios y ofertas de Pizzareina. Los precios y ofertas pueden cambiar sin previo aviso; prevalecen los vigentes en el local.</p><p>Los textos, imágenes y diseño de este sitio pertenecen a su titular. Mapa: © colaboradores de OpenStreetMap.</p>'],
+ priv:['Política de privacidad','<p><b>Responsable:</b> Abdelghani Lyazghi Bouslikhane (Pizzeria Reina) · NIF 61040651P · Pza. Doctor Fleming, 5, bajo F, 03130 Santa Pola · abdelghanilyazghi092@gmail.com</p><p>Este sitio web no utiliza cookies ni formularios. El mapa es una imagen estática: solo si pulsas en él se abre Google Maps, que tiene su propia política de privacidad.</p><p><b>Estadísticas:</b> usamos Umami (umami.is) para contar las visitas y los clics en los botones de forma anónima y agregada (por ejemplo, cuántas personas pulsan «Pedir»). Umami no usa cookies, no guarda nada en tu dispositivo, no almacena tu dirección IP y no permite identificarte. Base legal: nuestro interés legítimo en saber cómo se usa la web.</p><p>Si nos llamas para hacer un pedido, usamos tu nombre, teléfono y dirección solo para preparar y entregar ese pedido. Puedes ejercer tus derechos de acceso, rectificación y supresión escribiendo a abdelghanilyazghi092@gmail.com. También puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p>']
 };
 var CAMERA='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 8h3l2-2.5h6L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.6"/></svg>';
 function render(){
   var t=T[lang];
   $$('[data-i]').forEach(function(el){el.innerHTML=t[el.dataset.i]});
   $('#pizzaGrid').innerHTML='<div class="col">'+card('clasicas')+card('suaves')+card('diferentes')+'</div><div class="col">'+card('especiales')+card('integrales')+'</div>';
-  $('#moreGrid').innerHTML='<div class="col">'+card('ensaladas')+card('complementos')+'</div><div class="col">'+card('pastas')+card('bebidas')+'</div>';
+  $('#moreGrid').innerHTML='<div class="col">'+card('ensaladas')+card('complementos')+card('extras')+'</div><div class="col">'+card('pastas')+card('bebidas')+'</div>';
   renderHours();
   $('#cats').innerHTML=Object.keys(M).map(function(k){return '<a class="chip'+(k===activeCat?' on':'')+'" href="#cat-'+k+'" data-k="'+k+'">'+t.cats[k]+'</a>'}).join('');
   var pzHtml=PZ.map(function(p,i){
     var it=M.clasicas.filter(function(x){return x[0]===p[1]})[0];
-    return '<figure class="pzc"><div class="pzimg"><img src="'+PZIMG[p[0]]+'" alt="Pizza '+p[1]+'" width="560" height="560" draggable="false" decoding="async"></div><figcaption><b>'+p[1]+'</b><span class="pp">'+price(it[1])+'</span><span class="pd">'+desc(it[2])+'</span></figcaption></figure>'}).join('');
+    return '<figure class="pzc"><div class="pzimg"><img src="'+PZIMG[p[0]].replace('.webp','-300.webp')+'" srcset="'+PZIMG[p[0]].replace('.webp','-300.webp')+' 300w, '+PZIMG[p[0]]+' 560w" sizes="(max-width:760px) 56vw, 260px" alt="Pizza '+p[1]+'" width="560" height="560" draggable="false" loading="lazy" decoding="async"></div><figcaption><b>'+p[1]+'</b><span class="pp">'+price(it[1])+'</span><span class="pd">'+desc(it[2])+'</span></figcaption></figure>'}).join('');
   $('#pgal').innerHTML=pzHtml+pzHtml+pzHtml;
-  var galHtml=t.ph.map(function(p,i){return '<figure class="ph"><img src="'+PHOTOS[i]+'" alt="Pizzareina — '+p+'" width="'+PHSZ[i][0]+'" height="'+PHSZ[i][1]+'" draggable="false" decoding="async"><figcaption>'+p+'</figcaption></figure>'}).join('');
+  var galHtml=t.ph.map(function(p,i){return '<figure class="ph"><img src="'+PHOTOS[i].replace('.webp','-700.webp')+'" srcset="'+PHOTOS[i].replace('.webp','-700.webp')+' 700w, '+PHOTOS[i]+' 1400w" sizes="(max-width:760px) 78vw, 40vw" alt="Pizzareina — '+p+'" width="'+PHSZ[i][0]+'" height="'+PHSZ[i][1]+'" draggable="false" loading="lazy" decoding="async"><figcaption>'+p+'</figcaption></figure>'}).join('');
   $('#gal').innerHTML=galHtml+galHtml+galHtml;
   if(window.__carReset)window.__carReset();
   $$('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===lang?'true':'false')});
@@ -675,7 +697,8 @@ function branchSVG(n){
 $$('[data-branch]').forEach(function(el){el.innerHTML=branchSVG(+el.dataset.branch)});
 
 /* ---------- PIZZA (slices of the flyer photo) ---------- */
-var photo=$('#photo'),PULL_I=2,slices=[],EXPLODE=1.1,PULL_D=19;
+var WIDE=innerWidth>=1200,PANG=WIDE?210:150;
+var photo=$('#photo'),PULL_I=WIDE?3:2,slices=[],EXPLODE=1.1,PULL_D=19;
 for(var i=0;i<6;i++){
   var c=30+60*i,pts=['50% 50%'];
   for(var a=c-30;a<=c+30.01;a+=4){var r=a*Math.PI/180;pts.push((50+56*Math.sin(r)).toFixed(2)+'% '+(50-56*Math.cos(r)).toFixed(2)+'%')}
@@ -687,12 +710,13 @@ for(var i=0;i<6;i++){
 slices.forEach(function(s,i){if(i!==PULL_I)photo.appendChild(s)});
 photo.appendChild(slices[PULL_I]);
 var pullEl=slices[PULL_I].querySelector('.pull');
-var DIR=[Math.sin(150*Math.PI/180),-Math.cos(150*Math.PI/180)];
+var DIR=[Math.sin(PANG*Math.PI/180),-Math.cos(PANG*Math.PI/180)];
+pullEl.style.transformOrigin=(50+31*DIR[0]).toFixed(1)+'% '+(50+31*DIR[1]).toFixed(1)+'%';
 var logo=$('.logo');logo.innerHTML=logo.textContent.split('').map(function(ch){return '<span aria-hidden="true">'+ch+'</span>'}).join('');
 function explode(el){var a=+el.dataset.ang*Math.PI/180;return {x:Math.sin(a)*EXPLODE,y:-Math.cos(a)*EXPLODE}}
 
 /* ---------- CHEESE PULL between pizza and lifted slice ---------- */
-var strandG=$('#strandG0'),STR=[[120,8],[120,18],[120,29],[120,40],[180,9],[180,20],[180,31],[180,42],[150,6]];
+var strandG=$('#strandG0'),STR=[[-30,8],[-30,18],[-30,29],[-30,40],[30,9],[30,20],[30,31],[30,42],[0,6]].map(function(x){return [PANG+x[0],x[1]]});
 STR.forEach(function(){strandG.appendChild(document.createElementNS('http://www.w3.org/2000/svg','path'))});
 var strandEls=$$('path',strandG);
 function lens(ax,ay,bx,by,mx,my,wa,wm){
@@ -702,7 +726,7 @@ function lens(ax,ay,bx,by,mx,my,wa,wm){
 }
 function setPull(p){
   var e=p*PULL_D;
-  pullEl.style.transform='translate('+(DIR[0]*e).toFixed(2)+'%,'+(DIR[1]*e).toFixed(2)+'%) rotate('+(p*6).toFixed(2)+'deg) scale('+(1+p*.04).toFixed(3)+')';
+  pullEl.style.transform='translate('+(DIR[0]*e).toFixed(2)+'%,'+(DIR[1]*e).toFixed(2)+'%) rotate('+(p*(WIDE?-6:6)).toFixed(2)+'deg) scale('+(1+p*.04).toFixed(3)+')';
   slices[PULL_I].style.setProperty('--lift',p.toFixed(3));
   STR.forEach(function(s,k){
     var el=strandEls[k];if(p<.015){el.setAttribute('d','');return}
@@ -739,7 +763,7 @@ function buildPath(){
       LL.push(LL[LL.length-1]+Math.hypot(px-X[X.length-1],py-Y[Y.length-1]));X.push(px);Y.push(py)}
     cur={x:x3,y:y3};
   }
-  var firstX=($('.sec').dataset.side==='left')?xL:xR,fy=Math.min(p0.y+S*.05,G.footTop-18);
+  var firstX=(WIDE||$('.sec').dataset.side==='left')?xL:xR,fy=WIDE?p0.y+S*.05:Math.min(p0.y+S*.05,G.footTop-18);
   begin();C(p0.x+(firstX-p0.x)*.35,fy+S*.04,firstX+(p0.x<firstX?-1:1)*S*.12,fy,firstX,fy+S*.16);
   $$('.sec').forEach(function(sec){
     var r=docRect(sec),side=sec.dataset.side;begin();
@@ -872,8 +896,13 @@ function buildIntro(){
         duration:1.5,ease:'power3.inOut',stagger:{each:.1,from:'random'}},.35)
     .from('#pshadow',{opacity:0,scale:.7,duration:1.4,ease:'power2.out'},.9)
     .fromTo('#photo',{rotation:-10},{rotation:0,duration:2.2,ease:'power2.inOut'},.35)
-    .fromTo('#badge',{opacity:0,scale:1.5,rotation:-16},{opacity:1,scale:1,rotation:0,duration:.8,ease:'back.out(1.5)'},2.25)
-    .from('#endText > *',{opacity:0,y:12,duration:.7,stagger:.12},2.5);
+    .fromTo('#badge',{opacity:0,scale:1.5,rotation:-16},{opacity:1,scale:1,rotation:0,duration:.8,ease:'back.out(1.5)'},WIDE?3.15:2.25)
+    .from('#endText > *',{opacity:0,y:12,duration:.7,stagger:.12},WIDE?3.0:2.5);
+  if(WIDE){
+    // desktop: the pizza is assembled in the middle of the screen, then glides to its place on the left
+    var r=$('#pizzaWrap').getBoundingClientRect(),dx=innerWidth/2-(r.left+r.width/2);
+    tl.fromTo('#pizzaWrap',{x:dx},{x:0,duration:1.1,ease:'power3.inOut'},2.05);
+  }
 }
 
 

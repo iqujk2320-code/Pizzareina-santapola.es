@@ -877,6 +877,7 @@ function frame(){
 
 /* ---------- INTRO: plays by itself, page scrolls freely ---------- */
 var introTl=null;
+var INTRO_SPEED=WIDE?2.6:2.2; // whole intro ≈1.5 s
 var introRunning=false,pendingRebuild=false;
 function buildIntro(){
   document.documentElement.classList.remove('js-intro');
@@ -903,6 +904,7 @@ function buildIntro(){
     var r=$('#pizzaWrap').getBoundingClientRect(),dx=innerWidth/2-(r.left+r.width/2);
     tl.fromTo('#pizzaWrap',{x:dx},{x:0,duration:1.1,ease:'power3.inOut'},2.05);
   }
+  tl.timeScale(INTRO_SPEED); // >1 = faster intro
 }
 
 
